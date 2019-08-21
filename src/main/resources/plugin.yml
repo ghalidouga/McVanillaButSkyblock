@@ -1,0 +1,5 @@
+name: VanillaButSkyBlock
+version: ${project.version}
+main: com.ghalidouga.vanillabutskyblock.VanillaButSkyBlock
+api-version: 1.13
+authors: [ghalidouga]

@@ -1,0 +1,5 @@
+name: VanillaButSkyBlock
+version: 1.0-SNAPSHOT
+main: com.ghalidouga.vanillabutskyblock.VanillaButSkyBlock
+api-version: 1.13
+authors: [ghalidouga]
