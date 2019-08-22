@@ -18,13 +18,13 @@ public class StartJourney implements Listener {
     @EventHandler
     public void rightClickStarter (PlayerInteractEvent e){
         Player player = e.getPlayer();
-
-        ItemStack starter = new ItemStack(Material.FIREWORK_ROCKET);
-        ItemMeta starterMeta = starter.getItemMeta();
-        starterMeta.setDisplayName(ChatColor.GREEN + "Start your journey!");
-        starter.setItemMeta(starterMeta);
+//
+//        ItemStack starter = new ItemStack(Material.FIREWORK_ROCKET);
+//        ItemMeta starterMeta = starter.getItemMeta();
+//        starterMeta.setDisplayName(ChatColor.GREEN + "Start your journey!");
+//        starter.setItemMeta(starterMeta);
         if(!e.hasItem()) return;
-        if(e.getItem().getType().equals(starter)) {
+        if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
             e.getPlayer().sendMessage("teleporting to random location");
             Random randomGenerator = new Random();
             int randomX = randomGenerator.nextInt(901 + 900) - 900;

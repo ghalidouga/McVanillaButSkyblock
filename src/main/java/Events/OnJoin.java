@@ -23,7 +23,7 @@ public class OnJoin implements Listener {
     @EventHandler
     public void onJoin (PlayerJoinEvent e){
         Player player = e.getPlayer();
-        ItemStack starter = new ItemStack(Material.FIREWORK_ROCKET);
+        ItemStack starter = new ItemStack(Material.GOLD_BLOCK);
         ItemMeta starterMeta = starter.getItemMeta();
         starterMeta.setDisplayName(ChatColor.GREEN + "Start your journey!");
         starter.setItemMeta(starterMeta);
