@@ -27,16 +27,18 @@ public class StartJourney implements Listener {
 //        starter.setItemMeta(starterMeta);
         if(!e.hasItem()) return;
         if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
-            e.getPlayer().sendMessage("teleporting to random location");
+            player.sendMessage("teleporting to random location");
             player.getInventory().remove(Material.GOLD_BLOCK);
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 3));
             Random randomGenerator = new Random();
             int randomX = randomGenerator.nextInt(901 + 900) - 900;
             int randomZ = randomGenerator.nextInt(901 + 900) - 900;
-            Location randomLocation = new Location(Bukkit.getWorld("Blast"),randomX,100,randomZ);
+            int randomY = randomGenerator.nextInt(195);
+            player.sendMessage("X = "+randomX+" Y = "+randomY+" Z = "+randomZ);
+            Location randomLocation = new Location(Bukkit.getWorld("Blast"),randomX,randomY+21,randomZ);
             player.teleport(randomLocation);
             Location playerLocation = player.getLocation();
-            Location platformLocation = playerLocation.subtract(0,10,0);
+            Location platformLocation = playerLocation.subtract(0,5,0);
             platformLocation.getBlock().setType(Material.GRASS_BLOCK);
         }
 
