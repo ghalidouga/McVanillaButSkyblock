@@ -11,6 +11,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.Random;
 
@@ -27,6 +29,7 @@ public class StartJourney implements Listener {
         if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
             e.getPlayer().sendMessage("teleporting to random location");
             player.getInventory().remove(Material.GOLD_BLOCK);
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 3));
             Random randomGenerator = new Random();
             int randomX = randomGenerator.nextInt(901 + 900) - 900;
             int randomZ = randomGenerator.nextInt(901 + 900) - 900;
