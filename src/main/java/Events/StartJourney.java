@@ -26,6 +26,7 @@ public class StartJourney implements Listener {
         if(!e.hasItem()) return;
         if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
             e.getPlayer().sendMessage("teleporting to random location");
+            player.getInventory().remove(Material.GOLD_BLOCK);
             Random randomGenerator = new Random();
             int randomX = randomGenerator.nextInt(901 + 900) - 900;
             int randomZ = randomGenerator.nextInt(901 + 900) - 900;
@@ -33,7 +34,7 @@ public class StartJourney implements Listener {
             player.teleport(randomLocation);
             Location playerLocation = player.getLocation();
             Location platformLocation = playerLocation.subtract(0,10,0);
-            platformLocation.getBlock().setType(Material.STONE_BRICKS);
+            platformLocation.getBlock().setType(Material.GRASS_BLOCK);
         }
 
 
