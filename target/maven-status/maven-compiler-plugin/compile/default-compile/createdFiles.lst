@@ -1,2 +1,3 @@
-Events\OnJoin.class
 com\ghalidouga\vanillabutskyblock\VanillaButSkyBlock.class
+Events\OnJoin.class
+Events\StartJourney.class

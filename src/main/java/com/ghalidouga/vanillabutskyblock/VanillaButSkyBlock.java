@@ -1,6 +1,7 @@
 package com.ghalidouga.vanillabutskyblock;
 
 import Events.OnJoin;
+import Events.StartJourney;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.WorldBorder;
@@ -14,6 +15,8 @@ public final class VanillaButSkyBlock extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(new OnJoin(),this);
+        getServer().getPluginManager().registerEvents(new StartJourney(),this);
+
 //        Random randomGenerator = new Random();
 //        int randomNumber = randomGenerator.nextInt(901 - 900) + 900;
 //        Location randomLocation = new Location(Bukkit.getWorld("Blast"),randomNumber,0,randomNumber);
