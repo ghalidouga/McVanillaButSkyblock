@@ -20,15 +20,11 @@ public class StartJourney implements Listener {
     @EventHandler
     public void rightClickStarter (PlayerInteractEvent e){
         Player player = e.getPlayer();
-//
-//        ItemStack starter = new ItemStack(Material.FIREWORK_ROCKET);
-//        ItemMeta starterMeta = starter.getItemMeta();
-//        starterMeta.setDisplayName(ChatColor.GREEN + "Start your journey!");
-//        starter.setItemMeta(starterMeta);
         if(!e.hasItem()) return;
         if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
             player.sendMessage("teleporting to random location");
             player.getInventory().remove(Material.GOLD_BLOCK);
+
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 3));
             Random randomGenerator = new Random();
             int randomX = randomGenerator.nextInt(901 + 900) - 900;
@@ -37,9 +33,22 @@ public class StartJourney implements Listener {
             player.sendMessage("X = "+randomX+" Y = "+randomY+" Z = "+randomZ);
             Location randomLocation = new Location(Bukkit.getWorld("Blast"),randomX,randomY+21,randomZ);
             player.teleport(randomLocation);
+            player.getInventory().addItem(new ItemStack(Material.ICE,2));
+            player.getInventory().addItem(new ItemStack(Material.MELON));
+            player.getInventory().addItem(new ItemStack(Material.TORCH,2));
+            player.getInventory().addItem(new ItemStack(Material.LAVA_BUCKET));
+            player.getInventory().addItem(new ItemStack(Material.PUMPKIN_SEEDS));
+            player.getInventory().addItem(new ItemStack(Material.SUGAR_CANE));
+            player.getInventory().addItem(new ItemStack(Material.WHEAT));
+            player.getInventory().addItem(new ItemStack(Material.OAK_SAPLING));
+            player.getInventory().addItem(new ItemStack(Material.DIRT,14));
+            player.getInventory().addItem(new ItemStack(Material.WOODEN_HOE));
             Location playerLocation = player.getLocation();
-            Location platformLocation = playerLocation.subtract(0,5,0);
-            platformLocation.getBlock().setType(Material.GRASS_BLOCK);
+
+            Location platformLocation00 = playerLocation.subtract(0,5,0); // Center platform
+            platformLocation00.getBlock().setType(Material.GRASS_BLOCK);
+
+
         }
 
 
