@@ -41,8 +41,9 @@ public class StartJourney implements Listener {
             player.getInventory().addItem(new ItemStack(Material.SUGAR_CANE));
             player.getInventory().addItem(new ItemStack(Material.WHEAT));
             player.getInventory().addItem(new ItemStack(Material.OAK_SAPLING));
-            player.getInventory().addItem(new ItemStack(Material.DIRT,14));
+            player.getInventory().addItem(new ItemStack(Material.GRASS_BLOCK,14));
             player.getInventory().addItem(new ItemStack(Material.WOODEN_HOE));
+            player.getInventory().addItem(new ItemStack(Material.SHEEP_SPAWN_EGG,2));
             Location playerLocation = player.getLocation();
 
             Location platformLocation00 = playerLocation.subtract(0,5,0); // Center platform
