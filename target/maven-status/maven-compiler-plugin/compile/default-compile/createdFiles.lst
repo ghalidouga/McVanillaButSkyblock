@@ -1,3 +1,4 @@
 com\ghalidouga\vanillabutskyblock\VanillaButSkyBlock.class
+Events\AntiGriefSpawn.class
 Events\OnJoin.class
 Events\StartJourney.class
