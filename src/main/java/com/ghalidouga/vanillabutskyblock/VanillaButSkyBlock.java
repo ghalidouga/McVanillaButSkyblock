@@ -1,5 +1,6 @@
 package com.ghalidouga.vanillabutskyblock;
 
+import Events.AntiBuildSpawn;
 import Events.AntiGriefSpawn;
 import Events.OnJoin;
 import Events.StartJourney;
@@ -18,6 +19,7 @@ public final class VanillaButSkyBlock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnJoin(),this);
         getServer().getPluginManager().registerEvents(new StartJourney(),this);
         getServer().getPluginManager().registerEvents(new AntiGriefSpawn(),this);
+        getServer().getPluginManager().registerEvents(new AntiBuildSpawn(),this);
 
 //        Random randomGenerator = new Random();
 //        int randomNumber = randomGenerator.nextInt(901 - 900) + 900;

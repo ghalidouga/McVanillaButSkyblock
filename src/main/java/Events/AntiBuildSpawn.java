@@ -5,13 +5,14 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
 
-public class AntiGriefSpawn implements Listener {
+
+public class AntiBuildSpawn implements Listener {
     @EventHandler
-    public void CantBreakSpawn (BlockBreakEvent e){
+
+    public void CantBuildSpawn (BlockPlaceEvent e){
         Player player = e.getPlayer();
         Location playerLocation = player.getLocation();
         double playerX = playerLocation.getX();
@@ -23,9 +24,5 @@ public class AntiGriefSpawn implements Listener {
             e.setCancelled(true);
             player.sendMessage(ChatColor.RED + "Sorry, can't do that here");
         }
-
-
     }
-
-
 }
