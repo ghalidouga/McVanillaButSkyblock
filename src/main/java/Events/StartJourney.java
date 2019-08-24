@@ -1,16 +1,13 @@
 package Events;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -20,8 +17,11 @@ public class StartJourney implements Listener {
     @EventHandler
     public void rightClickStarter (PlayerInteractEvent e){
         Player player = e.getPlayer();
+        Location playerLocation1 = player.getLocation();
+        double playerX = playerLocation1.getX();
+        double playerZ = playerLocation1.getZ();
         if(!e.hasItem()) return;
-        if(e.getItem().getType().equals(Material.GOLD_BLOCK)) {
+        if(e.getItem().getType().equals(Material.GOLD_BLOCK) && playerX < 20 && playerZ < 20 && playerX < 20 && playerZ > -20 && playerX > -20 && playerZ < 20 && playerX > -20 && playerZ > -20) {
             player.sendMessage("teleporting to random location");
             player.getInventory().remove(Material.GOLD_BLOCK);
 
@@ -53,9 +53,6 @@ public class StartJourney implements Listener {
         }
 
 
-//        if(e.getAction() == Action.RIGHT_CLICK_BLOCK && player.getInventory().containsAtLeast(starter,1)){
-
-//        }
 
     }
 
