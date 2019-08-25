@@ -21,9 +21,9 @@ public class StartJourney implements Listener {
         double playerX = playerLocation1.getX();
         double playerZ = playerLocation1.getZ();
         if(!e.hasItem()) return;
-        if(e.getItem().getType().equals(Material.GOLD_BLOCK) && playerX < 20 && playerZ < 20 && playerX < 20 && playerZ > -20 && playerX > -20 && playerZ < 20 && playerX > -20 && playerZ > -20) {
+        if(e.getItem().getType().equals(Material.STICK) && playerX < 20 && playerZ < 20 && playerX < 20 && playerZ > -20 && playerX > -20 && playerZ < 20 && playerX > -20 && playerZ > -20) {
             player.sendMessage("teleporting to random location");
-            player.getInventory().remove(Material.GOLD_BLOCK);
+            player.getInventory().clear();
 
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 3));
             Random randomGenerator = new Random();
