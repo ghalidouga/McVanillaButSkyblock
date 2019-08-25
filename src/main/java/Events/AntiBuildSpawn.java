@@ -21,8 +21,13 @@ public class AntiBuildSpawn implements Listener {
 
 
         if(playerX < 20 && playerZ < 20 && playerX < 20 && playerZ > -20 && playerX > -20 && playerZ < 20 && playerX > -20 && playerZ > -20){
-            e.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "Sorry, can't do that here");
+            if(!player.isOp()) {
+                e.setCancelled(true);
+                player.sendMessage(ChatColor.RED + "Sorry, can't do that here");
+            }
+            else {
+                e.setCancelled(false);
+            }
         }
     }
 }

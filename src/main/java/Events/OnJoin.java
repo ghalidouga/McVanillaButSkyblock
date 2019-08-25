@@ -20,7 +20,7 @@ public class OnJoin implements Listener {
         starterMeta.setDisplayName(ChatColor.GREEN + "Start your journey!");
         starter.setItemMeta(starterMeta);
 
-        Location lobbySpawn = new Location(Bukkit.getWorld("Blast"),0.5,5,0.5);
+        Location lobbySpawn = new Location(Bukkit.getWorld("Blast"),0.5,5,0.5,0,0);
         if(!player.hasPlayedBefore()){
            player.teleport(lobbySpawn);
            player.getInventory().addItem(starter);
