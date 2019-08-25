@@ -44,11 +44,33 @@ public class StartJourney implements Listener {
             player.getInventory().addItem(new ItemStack(Material.GRASS_BLOCK,14));
             player.getInventory().addItem(new ItemStack(Material.WOODEN_HOE));
             player.getInventory().addItem(new ItemStack(Material.SHEEP_SPAWN_EGG,2));
-            Location playerLocation = player.getLocation();
+            Location playerLocation00 = player.getLocation();
+            Location playerLocation10 = player.getLocation();
+            Location playerLocation01 = player.getLocation();
+            Location playerLocation11 = player.getLocation();
+            Location playerLocationY00 = player.getLocation();
+            Location playerLocationY10 = player.getLocation();
+            Location playerLocationY01 = player.getLocation();
+            Location playerLocationY11 = player.getLocation();
 
-            Location platformLocation00 = playerLocation.subtract(0,5,0); // Center platform
+
+            Location platformLocation00 = playerLocation00.subtract(0,5,0); // Center platform
+            Location platformLocation10 = playerLocation10.subtract(1,5,0);
+            Location platformLocation01 = playerLocation01.subtract(0,5,1);
+            Location platformLocation11 = playerLocation11.subtract(1,5,1);
+            Location platformLocationY00 = playerLocationY00.subtract(0,6,0);
+            Location platformLocationY10 = playerLocationY10.subtract(1,6,0);
+            Location platformLocationY01 = playerLocationY01.subtract(0,6,1);
+            Location platformLocationY11 = playerLocationY11.subtract(1,6,1);
+
             platformLocation00.getBlock().setType(Material.GRASS_BLOCK);
-
+            platformLocation10.getBlock().setType(Material.GRASS_BLOCK);
+            platformLocation01.getBlock().setType(Material.GRASS_BLOCK);
+            platformLocation11.getBlock().setType(Material.GRASS_BLOCK);
+            platformLocationY00.getBlock().setType(Material.DIRT);
+            platformLocationY10.getBlock().setType(Material.DIRT);
+            platformLocationY01.getBlock().setType(Material.DIRT);
+            platformLocationY11.getBlock().setType(Material.DIRT);
 
         }
 
