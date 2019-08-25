@@ -22,7 +22,7 @@ public class StartJourney implements Listener {
         double playerZ = playerLocation1.getZ();
         if(!e.hasItem()) return;
         if(e.getItem().getType().equals(Material.STICK) && playerX < 20 && playerZ < 20 && playerX < 20 && playerZ > -20 && playerX > -20 && playerZ < 20 && playerX > -20 && playerZ > -20) {
-            player.sendMessage("teleporting to random location");
+            player.sendMessage("Teleporting to random location");
             player.getInventory().clear();
 
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 3));
